@@ -251,8 +251,7 @@ public class SecurityConfig {
                             .requestMatchers(
                                     HttpMethod.POST,
                                     "/api/category/**")
-                            .authenticated()
-                            
+                            .permitAll()
                             .requestMatchers(
                                     HttpMethod.PUT,
                                     "/api/category/**")
