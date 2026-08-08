@@ -246,20 +246,22 @@ public class SecurityConfig {
                         // ADMIN ONLY
                         // =========================================
 
-                        .requestMatchers(
-                                HttpMethod.POST,
-                                "/api/category/**")
-                        .hasRole("ADMIN")
+                        // CATEGORY MANAGEMENT
 
-                        .requestMatchers(
-                                HttpMethod.PUT,
-                                "/api/category/**")
-                        .hasRole("ADMIN")
-
-                        .requestMatchers(
-                                HttpMethod.DELETE,
-                                "/api/category/**")
-                        .hasRole("ADMIN")
+                            .requestMatchers(
+                                    HttpMethod.POST,
+                                    "/api/category/**")
+                            .authenticated()
+                            
+                            .requestMatchers(
+                                    HttpMethod.PUT,
+                                    "/api/category/**")
+                            .authenticated()
+                            
+                            .requestMatchers(
+                                    HttpMethod.DELETE,
+                                    "/api/category/**")
+                            .authenticated()
 
                         // =========================================
                         // USER MANAGEMENT
